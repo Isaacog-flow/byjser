@@ -22,11 +22,11 @@
   <main>
 
         <section class="custom-order">
-  <h2>Personaliza tu orden.</h2>
-  <p>Por favor llena el siguiente formulario para tener mas informacion sobre tu pedido.</p>
-  <form id="miFormulario" action="https://formsubmit.co/isaacocampoga@outlook.com" method="POST" enctype="multipart/form-data">
+             <h2>Personaliza tu orden.</h2>
+             <p>Por favor llena el siguiente formulario para tener mas informacion sobre tu pedido.</p>
+    <form id="miFormulario" action="https://formsubmit.co/isaacocampoga@outlook.com" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_captcha" value="false">
-     <input type="hidden" name="_next" value="https://isaacog-flow.github.io/byjser/index.html">
+    <input type="hidden" name="_next" value="https://isaacog-flow.github.io/byjser/index.html">
     <label for="productType">Tipo de producto.</label>
     <select id="productType" name="productType" required>
       <option value="">Selecciona un producto.</option>
@@ -53,14 +53,8 @@
     <input type="Text" id="email" name="contacto" required>
 
     <button type="submit">Enviar</button>
-  </form>
+  </form> 
 
-  <div id="miModal" class="modal">
-  <div class="modal-content">
-    <p>¡Gracias por contactarnos!<br>Nos pondremos en contacto contigo en breve.</p>
-    <button onclick="cerrarModal()">Cerrar</button>
-  </div>
-</div>
 </section>
 
     <section id="contact" class="contact">
@@ -80,31 +74,40 @@
     <p>&copy; 2025 ByJ - Todos los derechos reservados.</p>
   </footer>
 
+  <div id="miModal" class="modal">
+    <div class="modal-content">
+      <p>¡Gracias por contactarnos!<br>Nos pondremos en contacto contigo en breve.</p>
+      <button onclick="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+
 <script>
   const formulario = document.getElementById("miFormulario");
   const modal = document.getElementById("miModal");
 
   formulario.addEventListener("submit", function(evento) {
-    evento.preventDefault(); // evita el envío automático
+    evento.preventDefault(); // evita que el navegador redirija
 
-    const datos = new FormData(formulario); // captura datos del formulario
+    const datos = new FormData(formulario);
 
     fetch(formulario.action, {
       method: "POST",
       body: datos,
-      headers: { 'Accept': 'application/json' }
+      headers: {
+        'Accept': 'application/json'
+      }
     })
     .then(response => {
       if (response.ok) {
-        modal.style.display = "block"; // muestra la ventana emergente
+        modal.style.display = "block"; // muestra el mensaje
         formulario.reset(); // limpia el formulario
       } else {
         alert("Hubo un problema al enviar el formulario.");
       }
     })
     .catch(error => {
-      console.error("Error:", error);
-      alert("Ocurrió un error al enviar.");
+      console.error("Error al enviar:", error);
+      alert("Ocurrió un error inesperado.");
     });
   });
 
