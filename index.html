@@ -74,9 +74,10 @@
   <p>¿Tienes una idea o diseño en mente? ¡Platícanos!</p>
 
   <form action="https://formsubmit.co/isaacocampoga@outlook.com" method="POST">
-    <input type="text" placeholder="Tu nombre" required />
-    <input type="email" placeholder="Tu correo electrónico o número de telefono" required />
-    <textarea placeholder="Tu mensaje" required></textarea>
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="nombre" placeholder="Tu nombre" required />
+    <input type="text" name="correo" placeholder="Tu correo electrónico o número de telefono" required />
+    <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
     <button type="submit">Enviar mensaje</button>
   </form>
 
