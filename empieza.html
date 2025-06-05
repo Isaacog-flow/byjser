@@ -75,45 +75,46 @@
   </footer>
 
   <div id="miModal" class="modal">
-    <div class="modal-content">
-      <p>¡Gracias por contactarnos!<br>Nos pondremos en contacto contigo en breve.</p>
-      <button onclick="cerrarModal()">Cerrar</button>
-    </div>
+  <div class="modal-content">
+    <p>¡Gracias por contactarnos!<br>Nos pondremos en contacto contigo en breve.</p>
+    <button onclick="cerrarModal()">Cerrar</button>
+  </div>
   </div>
 
 <script>
-  const formulario = document.getElementById("miFormulario");
-  const modal = document.getElementById("miModal");
+  document.addEventListener("DOMContentLoaded", function () {
+    const formulario = document.getElementById("miFormulario");
+    const modal = document.getElementById("miModal");
 
-  formulario.addEventListener("submit", function(evento) {
-    evento.preventDefault(); // evita que el navegador redirija
+    formulario.addEventListener("submit", function (evento) {
+      evento.preventDefault(); // evita que recargue o redirija
 
-    const datos = new FormData(formulario);
+      const datos = new FormData(formulario);
 
-    fetch(formulario.action, {
-      method: "POST",
-      body: datos,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        modal.style.display = "block"; // muestra el mensaje
-        formulario.reset(); // limpia el formulario
-      } else {
-        alert("Hubo un problema al enviar el formulario.");
-      }
-    })
-    .catch(error => {
-      console.error("Error al enviar:", error);
-      alert("Ocurrió un error inesperado.");
+      fetch(formulario.action, {
+        method: "POST",
+        body: datos,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(respuesta => {
+        if (respuesta.ok) {
+          modal.style.display = "block"; // solo se muestra si fue exitoso
+          formulario.reset(); // limpia el formulario
+        } else {
+          alert("Hubo un problema al enviar el formulario.");
+        }
+      })
+      .catch(error => {
+        console.error("Error al enviar:", error);
+        alert("Ocurrió un error inesperado.");
+      });
     });
-  });
 
-  function cerrarModal() {
-    modal.style.display = "none";
-  }
+    // Función para cerrar el modal
+    window.cerrarModal = function () {
+      modal.style.display = "none";
+    };
+  });
 </script>
 </body>
 </html>
