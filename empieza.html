@@ -54,6 +54,13 @@
 
     <button type="submit">Enviar</button>
   </form>
+
+  <div id="miModal" class="modal">
+  <div class="modal-content">
+    <p>¡Gracias por contactarnos!<br>Nos pondremos en contacto contigo en breve.</p>
+    <button onclick="cerrarModal()">Cerrar</button>
+  </div>
+</div>
 </section>
 
     <section id="contact" class="contact">
@@ -72,5 +79,38 @@
   <footer>
     <p>&copy; 2025 ByJ - Todos los derechos reservados.</p>
   </footer>
+
+<script>
+  const formulario = document.getElementById("miFormulario");
+  const modal = document.getElementById("miModal");
+
+  formulario.addEventListener("submit", function(evento) {
+    evento.preventDefault(); // evita el envío automático
+
+    const datos = new FormData(formulario); // captura datos del formulario
+
+    fetch(formulario.action, {
+      method: "POST",
+      body: datos,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        modal.style.display = "block"; // muestra la ventana emergente
+        formulario.reset(); // limpia el formulario
+      } else {
+        alert("Hubo un problema al enviar el formulario.");
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("Ocurrió un error al enviar.");
+    });
+  });
+
+  function cerrarModal() {
+    modal.style.display = "none";
+  }
+</script>
 </body>
 </html>
