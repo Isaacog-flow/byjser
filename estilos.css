@@ -16,14 +16,14 @@ body {
 
 header {
   position: fixed;
-  background-color: #fff;
+  background-color: #000000;
   border-bottom: 1px solid #eee;
   padding: 20px 0;
 
       top: 0;                /* Lo coloca en la parte superior */
       width: 100%;           /* Que ocupe todo el ancho */
 
-      color: black;
+      color: #c0005d;
       padding: 15px 20px;
       z-index: 1000;         /* Para que esté por encima del contenido */
 }
@@ -40,6 +40,7 @@ header {
 .logo {
   font-size: 24px;
   font-weight: bold;
+  font-family: serif;
 }
 
 nav ul {
@@ -50,7 +51,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #333;
+  color: #c0005d;
   font-weight: 500;
 }
 
@@ -132,14 +133,15 @@ footer {
   text-align: center;
 }
 
-.gallery h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
+.gallery h1 {
+  font-size: 48px;
+  font-weight: 800;
 }
 
 .gallery p {
-  color: #666;
-  margin-bottom: 30px;
+  font-size: 18px;
+  margin: 20px 0;
+  color: #555;
 }
 
 .contact {
@@ -201,4 +203,82 @@ form button:hover {
 
 .contact-info a:hover {
   text-decoration: underline;
+}
+
+.listo-para-ti {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.listo-para-ti p {
+  font-size: 18px;
+  margin: 20px 0;
+  color: #555;
+}
+
+.listo-para-ti h1 {
+ font-size: 48px;
+  font-weight: 800;
+}
+
+.galeria-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.producto {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.producto:hover {
+  transform: scale(1.03);
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.producto a{
+  text-decoration: none;
+}
+
+.producto h3 {
+  margin: 15px 10px 5px;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.producto p {
+  margin: 5px 10px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.precio {
+  color: #c51e48 !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .galeria-productos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto {
+    width: 90%;
+  }
 }

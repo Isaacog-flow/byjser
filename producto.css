@@ -1,0 +1,123 @@
+/* Estilo general */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* Contenedor principal */
+.producto-detalle {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Imagen principal */
+.imagen-principal {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.imagen-principal img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Información del producto */
+.info-producto {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-producto h1 {
+  font-size: 32px;
+  color: #c51e48;
+  margin-bottom: 20px;
+}
+
+.info-producto p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.precio {
+  font-size: 24px;
+  font-weight: bold;
+  color: #c51e48;
+}
+
+/* Botón de contacto */
+.btn-comprar {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background-color: #c51e48;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #a41638;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .producto-detalle {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .imagen-principal img {
+    max-width: 100%;
+  }
+
+  .info-producto h1 {
+    font-size: 26px;
+  }
+
+  .precio {
+    font-size: 20px;
+  }
+}
+
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px 0 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}

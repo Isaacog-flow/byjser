@@ -178,3 +178,8 @@ footer {
 .modal-content button:hover {
   background-color: #a0183a;
 }
+
+
+.productType{
+  cursor: pointer;
+}
