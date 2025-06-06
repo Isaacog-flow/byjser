@@ -1,100 +1,76 @@
-/* Estilo general */
+/* Estilos generales */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
+  background-color: #fff;
   color: #333;
 }
 
-/* Contenedor principal */
+
+
 .producto-detalle {
   display: flex;
-  flex-wrap: wrap;
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
   gap: 40px;
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-}
-
-/* Imagen principal */
-.imagen-principal {
-  flex: 1 1 400px;
-  text-align: center;
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* IMPORTANTE para que no rompa en móvil */
 }
 
 .imagen-principal img {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   border-radius: 12px;
   object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Información del producto */
 .info-producto {
-  flex: 1 1 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.info-producto h1 {
-  font-size: 32px;
-  color: #c51e48;
-  margin-bottom: 20px;
-}
-
-.info-producto p {
-  font-size: 16px;
-  margin: 10px 0;
+  max-width: 500px;
 }
 
 .precio {
-  font-size: 24px;
+  color: #c0005d;
+  font-size: 20px;
   font-weight: bold;
-  color: #c51e48;
+  margin: 10px 0;
 }
 
-/* Botón de contacto */
 .btn-comprar {
-  margin-top: 30px;
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #c0005d;
+  color: white;
   padding: 12px 24px;
-  background-color: #c51e48;
-  color: #fff;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 8px;
-  text-align: center;
   transition: background-color 0.3s ease;
 }
 
 .btn-comprar:hover {
-  background-color: #a41638;
+  background-color: #a0004f;
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
+/* Versión responsive */
+@media (max-width: 768px) {
   .producto-detalle {
     flex-direction: column;
     padding: 20px;
+    text-align: center;
+  }
+
+  .info-producto {
+    max-width: 100%;
   }
 
   .imagen-principal img {
     max-width: 100%;
   }
-
-  .info-producto h1 {
-    font-size: 26px;
-  }
-
-  .precio {
-    font-size: 20px;
-  }
 }
-
 
 header {
   background-color: #000;
