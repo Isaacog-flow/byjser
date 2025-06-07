@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo | ByJ</title>
+  <link rel="stylesheet" href="catalogo.css" />
+</head>
+<body>
+
+    <header>
+    <h1>ByJ</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html">Trabajos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<div class="contenedor-catalogo">
+  <aside class="menu-lateral">
+    <h3>Categorías</h3>
+    <ul>
+      <li onclick="filtrarProductos('todos')">Mostrar todo</li>
+      <li onclick="filtrarProductos('playeras')">Playeras</li>
+      <li onclick="filtrarProductos('vasos')">Vasos</li>
+      <li onclick="filtrarProductos('termos')">Termos</li>
+      <li onclick="filtrarProductos('gorras')">Gorras</li>
+      <li onclick="filtrarProductos('sudaderas')">Sudaderas</li>
+      <li onclick="filtrarProductos('otros')">Otros</li>
+    </ul>
+  </aside>
+
+  
+  
+
+  <main class="galeria-productos">
+    <div class="producto playeras">
+      <img src="img_9287.jpeg" alt="Playera">
+      <h4>Playera Diseño Libre</h4>
+      <p>$249 MXN</p>
+    </div>
+    <div class="producto gorras">
+      <img src="img_9287.jpeg" alt="Gorra">
+      <h4>Gorra Logo B&J</h4>
+      <p>$199 MXN</p>
+    </div>
+    <div class="producto vasos">
+      <img src="img_9287.jpeg" alt="Vaso">
+      <h4>Vaso Personalizado</h4>
+      <p>$149 MXN</p>
+    </div>
+
+    <div class="producto otros">
+      <img src="img_9287.jpeg" alt="Vaso">
+      <h4>Vaso Personalizado</h4>
+      <p>$149 MXN</p>
+    </div>
+
+    <div class="producto termos">
+      <img src="img_9287.jpeg" alt="Vaso">
+      <h4>Vaso Personalizado</h4>
+      <p>$149 MXN</p>
+    </div>
+
+    <div class="producto sudaderas">
+      <img src="img_9287.jpeg" alt="Vaso">
+      <h4>Vaso Personalizado</h4>
+      <p>$149 MXN</p>
+    </div>
+
+    <div class="producto otros">
+      <img src="img_9287.jpeg" alt="Vaso">
+      <h4>Vaso Personalizado</h4>
+      <p>$149 MXN</p>
+    </div>
+
+    <div class="producto otros">
+      <img src="img_9287.jpeg" alt="Vaso">
+      <h4>Vaso Personalizado</h4>
+      <p>$149 MXN</p>
+    </div>
+
+    <div class="producto vasos">
+      <img src="img_9287.jpeg" alt="Vaso">
+      <h4>Vaso Personalizado</h4>
+      <p>$149 MXN</p>
+    </div>
+
+    <div class="producto playeras">
+      <img src="img_9287.jpeg" alt="Vaso">
+      <h4>Vaso Personalizado</h4>
+      <p>$149 MXN</p>
+    </div>
+
+    <div class="producto gorras">
+      <img src="img_9287.jpeg" alt="Vaso">
+      <h4>Vaso Personalizado</h4>
+      <p>$149 MXN</p>
+    </div>
+
+    <div class="producto playeras">
+      <img src="img_9287.jpeg" alt="Vaso">
+      <h4>Vaso Personalizado</h4>
+      <p>$149 MXN</p>
+    </div>
+    <!-- Agrega más productos con sus respectivas clases -->
+  </main>
+</div>
+
+<script>
+  function filtrarProductos(categoria) {
+    const productos = document.querySelectorAll('.producto');
+    productos.forEach(p => {
+      if (categoria === 'todos' || p.classList.contains(categoria)) {
+        p.style.display = 'block';
+      } else {
+        p.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
