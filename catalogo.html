@@ -22,8 +22,8 @@
         </nav>
     </header>
 
-
-<aside class="menu-lateral sidebar">
+<div class="contenedor-catalogo">
+<aside class="sidebar">
   <button class="cerrar-sidebar" onclick="toggleSidebar()">✕</button>
     <h3>Categorías</h3>
     <ul>
@@ -137,8 +137,36 @@
 <script>
   function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('active');
+    const header = document.querySelector('header');
+    const isActive = sidebar.classList.toggle('active');
+
+    // Si el sidebar se activa, ocultamos el header
+    if (isActive && window.innerWidth <= 768) {
+      header.classList.add('ocultar-header');
+    } else {
+      header.classList.remove('ocultar-header');
+    }
+    
   }
+</script>
+
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scroll hacia abajo
+      header.classList.add("ocultar-header");
+    } else {
+      // Scroll hacia arriba
+      header.classList.remove("ocultar-header");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita valores negativos
+  });
 </script>
 
 </body>
