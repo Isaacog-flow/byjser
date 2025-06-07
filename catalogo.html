@@ -10,6 +10,7 @@
 
     <header>
     <h1>ByJ</h1>
+    
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -19,7 +20,7 @@
     </nav>
   </header>
 
-
+ <button class="toggle-sidebar" onclick="toggleSidebar()">☰ Categorías</button>
 <div class="contenedor-catalogo">
   <aside class="menu-lateral">
     <h3>Categorías</h3>
@@ -121,6 +122,13 @@
         p.style.display = 'none';
       }
     });
+  }
+</script>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
   }
 </script>
 

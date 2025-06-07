@@ -110,3 +110,44 @@ nav ul li a:hover {
   overflow-y: auto;
 }
 
+
+/*nuevo*/
+
+/* Sidebar oculta en móviles por defecto */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+    position: absolute;
+    background: white;
+    z-index: 10;
+    top: 60px; /* ajusta si tienes header */
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar.active {
+    display: block;
+  }
+
+  .toggle-sidebar {
+    display: inline-block;
+    background-color: #c51e48;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 15px;
+    border-radius: 8px;
+  }
+}
+
+/* En desktop no mostrar botón */
+@media screen and (min-width: 769px) {
+  .toggle-sidebar {
+    display: none;
+  }
+}
+
