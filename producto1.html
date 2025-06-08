@@ -21,9 +21,12 @@
   </header>
 
 <section class="producto-detalle">
-  <div class="imagen-principal">
-    <img src="img_9287.jpeg" alt="Playera Diseño Libre" />
-  </div>
+  <div class="galeria-scroll">
+  <img src="img_9287.jpeg" alt="Imagen 1" />
+  <img src="img_9287.jpeg" alt="Imagen 2" />
+  <img src="img_9287.jpeg" alt="Imagen 3" />
+  <!-- Puedes agregar más imágenes -->
+</div>
   <div class="info-producto">
     <h1>Playera “Diseño Libre”</h1>
     <p class="precio">$249 MXN</p>
@@ -34,5 +37,67 @@
   </div>
 </section>
 
+
+
+<div id="modal" class="modal">
+  <span class="cerrar">&times;</span>
+  <img class="modal-contenido" id="img-ampliada">
+  <span class="anterior">&#10094;</span>
+  <span class="siguiente">&#10095;</span>
+</div>
+
+ <footer>
+  <p>© 2025 ByJ. Todos los derechos reservados.</p>
+  <p>Desarrollado por <strong>Isaac Ocampo García</strong></p>
+  <p>
+    <a href="mailto:isaacocampoga@outlook.com">isaacocampoga@outlook.com</a> 
+  </p>
+</footer>
+
+<script>
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("img-ampliada");
+  const cerrar = document.querySelector(".cerrar");
+  const siguiente = document.querySelector(".siguiente");
+  const anterior = document.querySelector(".anterior");
+
+  const imagenes = Array.from(document.querySelectorAll('.galeria-scroll img'));
+  let imagenActual = 0;
+
+  imagenes.forEach((img, i) => {
+    img.addEventListener('click', () => {
+      imagenActual = i;
+      mostrarImagen();
+    });
+  });
+
+  function mostrarImagen() {
+    modal.style.display = "block";
+    modalImg.src = imagenes[imagenActual].src;
+  }
+
+  cerrar.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  siguiente.onclick = (e) => {
+    e.stopPropagation();
+    imagenActual = (imagenActual + 1) % imagenes.length;
+    mostrarImagen();
+  };
+
+  anterior.onclick = (e) => {
+    e.stopPropagation();
+    imagenActual = (imagenActual - 1 + imagenes.length) % imagenes.length;
+    mostrarImagen();
+  };
+
+  modal.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+</script>
+
 </body>
+
+
 </html>
