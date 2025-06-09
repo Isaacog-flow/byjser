@@ -265,5 +265,25 @@
   });
 </script>
 
+<script>
+  // Cierra el sidebar si haces clic fuera de él
+  document.addEventListener('click', function (event) {
+    const sidebar = document.querySelector('.sidebar');
+    const toggleBtn = document.querySelector('.toggle-sidebar');
+    const cerrarBtn = document.querySelector('.cerrar-sidebar');
+
+    if (
+      sidebar.classList.contains('active') &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target) &&
+      !cerrarBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('active');
+      document.querySelector('header').classList.remove('ocultar-header');
+    }
+  });
+</script>
+
+
 </body>
 </html>
