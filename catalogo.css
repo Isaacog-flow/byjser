@@ -1,8 +1,13 @@
 /* ========== GENERAL ========== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
   background-color: #f6f6f6;
+  overflow-x: hidden; /* Evita scroll horizontal */
 }
 
 
@@ -41,6 +46,15 @@ nav ul li a:hover {
 }
 
 /* ========== LAYOUT ========== */
+@media screen and (max-width: 768px) {
+  .contenedor-catalogo {
+    flex-direction: column; /* en móviles, que se apilen */
+    width: 100vw; /* que ocupe solo el ancho de la pantalla */
+    overflow-x: hidden;
+  }
+}
+
+
 .contenedor-catalogo {
   display: flex;
   align-items: flex-start;
@@ -84,7 +98,8 @@ nav ul li a:hover {
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 20px;
   padding: 20px;
-  
+   width: 100%;
+  box-sizing: border-box; /* para que el padding no sume al ancho total */  
 }
 
 .producto {
@@ -101,6 +116,12 @@ nav ul li a:hover {
 }
 
 /* ========== RESPONSIVE MOBILE ========== */
+@media screen and (max-width: 768px) {
+  .galeria-productos {
+    grid-template-columns: repeat(2, 1fr); /* ✅ Mínimo 2 columnas en móviles */
+  }
+}
+
 @media screen and (max-width: 768px) {
   .sidebar {
     display: none;
