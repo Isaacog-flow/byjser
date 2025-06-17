@@ -125,7 +125,7 @@ nav ul li a:hover {
 }
 
 .precio {
-  color: #c51e48;
+  color: #c0005d;
   font-weight: bold;
 }
 
@@ -163,7 +163,7 @@ nav ul li a:hover {
     right: 15px;
     font-size: 26px;
     font-weight: bold;
-    color: #c51e48;
+    color: #c0005d;
     border: none;
     background: none;
     cursor: pointer;
@@ -171,7 +171,7 @@ nav ul li a:hover {
 
   .toggle-sidebar {
     display: inline-block;
-    background-color: #c51e48;
+    background-color: #c0005d;
     color: white;
     padding: 10px 15px;
     border: none;
