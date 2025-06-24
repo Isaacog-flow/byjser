@@ -28,7 +28,6 @@ body {
 header {
   position: fixed;
   background-color: #000000;
-  border-bottom: 1px solid #eee;
   padding: 20px 0;
 
       top: 0;                /* Lo coloca en la parte superior */
@@ -58,6 +57,10 @@ nav a {
   text-decoration: none;
   color: #ffffff;
   font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 .hero {

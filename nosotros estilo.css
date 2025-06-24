@@ -35,7 +35,6 @@ body {
   background: url('fondo-nosotros.jpg') center/cover no-repeat;
   text-align: center;
   color: white;
-  padding: 30px 20px;
 }
 
 .about-hero h1 {
@@ -92,6 +91,10 @@ body {
   height: 200px;
   margin-bottom: 10px;
   border-radius: 40px;
+}
+
+.about-values p{
+  text-align: center;
 }
 
 /* Responsive */
